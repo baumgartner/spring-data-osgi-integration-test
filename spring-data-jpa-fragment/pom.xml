@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>at.badgateway.spring.data.osgi</groupId>
+	<artifactId>spring-data-jpa-fragment</artifactId>
+	<version>1.0.0</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.virgo.bundlor</groupId>
+				<artifactId>org.eclipse.virgo.bundlor.maven</artifactId>
+				<version>1.1.2.RELEASE</version>
+				<executions>
+					<execution>
+						<id>bundlor</id>
+						<goals>
+							<goal>bundlor</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifestFile>
+							target/classes/META-INF/MANIFEST.MF
+						</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>eclipse.virgo.build.bundles.release</id>
+			<name>Eclipse Virgo Build</name>
+			<url>http://build.eclipse.org/rt/virgo/maven/bundles/release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

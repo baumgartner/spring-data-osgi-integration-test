@@ -16,7 +16,7 @@ public class AuditorTest extends PluginDependencyOsgiAbstractTests {
 		this.repository = repository;
 	}
 
-	public void testHello() {
+	public void testInsert() {
 		User u = new User();
 		u.setFirstname("foo");
 		u.setLastname("bar");

@@ -14,7 +14,7 @@ import org.springframework.util.StringUtils;
 public abstract class PluginDependencyOsgiAbstractTests extends
 		AbstractConfigurableBundleCreatorTests {
 
-	private static final String TEST_FRRAMEWORK_BUNDLES_CONF_FILE = "/boot-bundles.properties";
+	private static final String TEST_FRRAMEWORK_BUNDLES_CONF = "/boot-bundles.properties";
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -23,7 +23,7 @@ public abstract class PluginDependencyOsgiAbstractTests extends
 				"org.eclipse.persistence, javax.persistence, 2.1.0",
 				"org.springframework.data, spring-data-commons, 1.6.4.RELEASE",
 				"org.springframework.data, spring-data-jpa, 1.4.4.RELEASE",
-//				"at.badgateway.spring.data.osgi, spring-data-jpa-fragment, 1.0.0",
+				"at.badgateway.spring.data.osgi, spring-data-jpa-fragment, 1.0.0",
 				"org.hsqldb, com.springsource.org.hsqldb, 1.8.0.10",
 				"org.eclipse.persistence, org.eclipse.persistence.jpa.jpql, 2.5.1",
 				"org.eclipse.persistence, org.eclipse.persistence.jpa, 2.5.1",
@@ -101,7 +101,7 @@ public abstract class PluginDependencyOsgiAbstractTests extends
 	protected Resource getTestingFrameworkBundlesConfiguration() {
 		return new InputStreamResource(
 				PluginDependencyOsgiAbstractTests.class
-						.getResourceAsStream(TEST_FRRAMEWORK_BUNDLES_CONF_FILE));
+						.getResourceAsStream(TEST_FRRAMEWORK_BUNDLES_CONF));
 
 	}
 

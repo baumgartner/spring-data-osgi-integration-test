@@ -20,16 +20,9 @@ public abstract class PluginDependencyOsgiAbstractTests extends
 
 	protected String[] getTestBundlesNames() {
 		return new String[] {
-				"org.eclipse.persistence, javax.persistence, 2.1.0",
 				"org.springframework.data, spring-data-commons, 1.8.0.BUILD-SNAPSHOT",
-				"org.springframework.data, spring-data-jpa, 1.6.0.BUILD-SNAPSHOT",
-				"org.hsqldb, com.springsource.org.hsqldb, 1.8.0.10",
-				"org.eclipse.persistence, org.eclipse.persistence.jpa.jpql, 2.5.1",
-				"org.eclipse.persistence, org.eclipse.persistence.jpa, 2.5.1",
-				"org.eclipse.persistence, org.eclipse.persistence.core, 2.5.1",
-				"org.eclipse.persistence, org.eclipse.persistence.antlr, 2.5.1",
-				"org.eclipse.persistence, org.eclipse.persistence.asm, 2.5.1",
-				"org.apache.servicemix.bundles,org.apache.servicemix.bundles.aspectj,1.7.4_1",
+				"org.springframework.data, spring-data-mongodb, 1.5.0.BUILD-SNAPSHOT",
+				"org.mongodb, mongo-java-driver, 2.12.1",
 				"joda-time, joda-time, 2.3" };
 
 	}
@@ -59,34 +52,19 @@ public abstract class PluginDependencyOsgiAbstractTests extends
 		Set<String> imports = StringUtils
 				.commaDelimitedListToSet(existingImports);
 
-		imports.add("org.springframework.data.annotation");
-		imports.add("org.springframework.dao");
-		imports.add("org.springframework.orm.jpa");
-		imports.add("org.springframework.orm.jpa.vendor");
-		imports.add("org.eclipse.persistence.jpa");
-		imports.add("javax.persistence.criteria");
-		imports.add("javax.persistence.metamodel");
-		imports.add("javax.persistence.spi");
-		imports.add("javax.sql");
-		imports.add("org.aspectj.lang");
-		imports.add("org.eclipse.persistence.expressions");
-		imports.add("org.eclipse.persistence.jpa");
-		imports.add("org.eclipse.persistence.queries");
-		imports.add("org.eclipse.persistence.internal.sessions");
-		imports.add("org.eclipse.persistence.sessions");
-		imports.add("org.eclipse.persistence.sessions.broker");
-		imports.add("org.eclipse.persistence.sessions.server");
-		imports.add("org.springframework.beans.factory.aspectj");
-		imports.add("org.springframework.data.jpa.repository.support");
-		imports.add("org.springframework.data.repository.core.support");
-		imports.add("org.aspectj.lang");
+		imports.add("com.mongodb");
+		imports.add("org.aopalliance.aop");
+		imports.add("org.bson.types");
+		imports.add("org.joda.time");
 		imports.add("org.springframework.aop");
 		imports.add("org.springframework.aop.framework");
-		imports.add("org.aopalliance.aop");
-		imports.add("org.eclipse.persistence.jpa.jpql.parser");
-		imports.add("org.springframework.data.jpa.domain.support");
+		imports.add("org.springframework.data.annotation");
+		imports.add("org.springframework.data.domain");
+		imports.add("org.springframework.data.mongodb.config");
+		imports.add("org.springframework.data.mongodb.core");
+		imports.add("org.springframework.data.mongodb.repository.support");
 		imports.add("org.springframework.data.repository");
-		imports.add("org.joda.time");
+		imports.add("org.springframework.data.repository.core.support");
 
 		mf.getMainAttributes().putValue(Constants.IMPORT_PACKAGE,
 				StringUtils.collectionToCommaDelimitedString(imports));

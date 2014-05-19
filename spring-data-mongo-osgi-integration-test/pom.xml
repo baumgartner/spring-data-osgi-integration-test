@@ -1,15 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>spring-data-jpa-osgi-integration-test</artifactId>
-
-	<parent>
-		<groupId>at.badgateway.spring.data.osgi</groupId>
-		<artifactId>spring-data-osgi-integration-tests</artifactId>
-		<version>1.0.0</version>
-	</parent>
-
-	<dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>at.badgateway.spring.data.osgi</groupId>
+    <artifactId>spring-data-osgi-integration-tests</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>spring-data-mongo-osgi-integration-test</artifactId>
+  
+  	<dependencies>
 		<dependency>
 			<groupId>org.apache.servicemix.bundles</groupId>
 			<artifactId>org.apache.servicemix.bundles.spring-beans</artifactId>
@@ -90,31 +88,23 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-			<version>1.6.0.BUILD-SNAPSHOT</version>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.5.0.BUILD-SNAPSHOT</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>spring-tx</artifactId>
 					<groupId>org.springframework</groupId>
 				</exclusion>
 				<exclusion>
-					<artifactId>spring-orm</artifactId>
+					<artifactId>spring-context</artifactId>
 					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>aspectjrt</artifactId>
-					<groupId>org.aspectj</groupId>
 				</exclusion>
 				<exclusion>
 					<artifactId>spring-beans</artifactId>
 					<groupId>org.springframework</groupId>
 				</exclusion>
 				<exclusion>
-					<artifactId>spring-aop</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-context</artifactId>
+					<artifactId>spring-expression</artifactId>
 					<groupId>org.springframework</groupId>
 				</exclusion>
 				<exclusion>
@@ -153,6 +143,5 @@
 			<version>1.7.6</version>
 		</dependency>
 	</dependencies>
-
-
+  
 </project>

@@ -1,7 +1,0 @@
-Bundle-SymbolicName: ${project.artifactId}
-Bundle-Version: 1.0.0
-Bundle-Name: ${project.artifactId}
-Fragment-Host: org.springframework.data.jpa
-Import-Package: org.aspectj.lang;resolution:=optional,
- org.aspectj.runtime.reflect;resolution:=optional,
- org.springframework.beans.factory.aspectj;resolution:=optional

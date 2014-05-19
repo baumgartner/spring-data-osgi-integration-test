@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<mongo:mongo />
+	<mongo:db-factory dbname="helloWorld" />
+	<mongo:repositories base-package="at.badgateway.osgi.integration.mongodb.repository" />
+	<mongo:auditing auditor-aware-ref="auditor" />
+
+	<bean class="at.badgateway.osgi.integration.mongodb.support.Auditor" id="auditor" />
+
+	<!-- <bean id="customMappingContext" class="org.springframework.data.mongodb.core.mapping.MongoMappingContext" 
+		/> -->
+
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+	</bean>
+
+</beans>

@@ -37,6 +37,6 @@
 	<bean class="at.badgateway.hellomongo.support.Auditor" id="auditor" />
 
 	<jpa:repositories base-package="at.badgateway.helloworld.repository"
-		query-lookup-strategy="create-if-not-found" />
+		query-lookup-strategy="create-if-not-found" entity-manager-factory-ref="emf"/>
 	<jpa:auditing auditor-aware-ref="auditor" />
 </beans>

@@ -14,7 +14,7 @@
 
 	<jdbc:embedded-database id="dataSource" type="HSQL" />
 
-	<bean id="entityManagerFactory"
+	<bean id="emf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="jpaVendorAdapter">
@@ -31,7 +31,7 @@
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
+		<property name="entityManagerFactory" ref="emf" />
 	</bean>
 
 	<bean class="at.badgateway.hellomongo.support.Auditor" id="auditor" />
